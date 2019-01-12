@@ -1,4 +1,4 @@
-const endpointURL = "http://api.yummly.com/v1/api/recipes?";
+const endpointURL = "https://api.yummly.com/v1/api/recipes?";
 const APIID = "732a115a";
 const APIKEY = "2796936f2c2e5af78bae1cb06a11515b";
 
