@@ -15,6 +15,6 @@ recipeDiv.attr('src', response.data[i].matches.recipeName.imageUrlsBySize);
 //append our recipeDiv to the resultsContainer
 resultsContainer.append(recipeDiv);
 //append resultsContainer to DOM
-("").append(resultsContainer);
+(".col-12 col-sm-6 col-md-8").append(resultsContainer);
 
 }
