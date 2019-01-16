@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 $(document).ready(function(){
     $('.parallax').parallax();
   });
   
+=======
+>>>>>>> bb2e89e8f0b1cba644d11b879d5c11e820bb8b5a
 // //create global for query search
 // let querySearch = $("#foodSearch");
 
@@ -50,4 +53,8 @@ function recipeResponse(response) {
         //append resultsContainer to DOM
         $("#recipeArea").append(resultsContainer);
     //};
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> bb2e89e8f0b1cba644d11b879d5c11e820bb8b5a
