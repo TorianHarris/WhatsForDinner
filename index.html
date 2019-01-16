@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Assets/style.css">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Document</title>
+
 </head>
+
 <body>
 
     <body id="home" class="scrollspy">
+
         <!--NAVBAR-->
        <div class="navbar-fixed">
-         <nav class=teal> 
+         <nav class=transparent> 
            <div class="container">
              <div class="nav-wrapper">
              <a href="#" class="brand-logo"> What's for Dinner</a>
@@ -68,21 +73,21 @@
         <section class="slider">
                 <ul class="slides">
                   <li>
-                    <img src="Images/depositphotos_134207276-stock-illustration-healthy-food-dishes-icon-for.jpg"> <!-- random image -->
+                    <img src="Images/restaurant-S10.jpg"> <!-- random image -->
                     <div class="caption center-align">
                       <h3>Enter ingredients from your pantry and go!</h3>
                       <h5 class="light grey-text text-lighten-3 hide-on-small-only">Don't waste time or food.</h5>
                     </div>
                   </li>
                   <li>
-                    <img src="Images/images.jpg"> <!-- random image -->
+                    <img src="Images/italian-food-background.jpg"> <!-- random image -->
                     <div class="caption left-align">
                       <h3>100+ Recipes</h3>
                       <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci est, ratione deleniti, error sit natus, magni alias perferendis aut repellendus voluptates placeat laudantium maxime distinctio asperiores harum voluptatum. Nemo, recusandae.</h5>
                     </div>
                   </li>
                   <li>
-                    <img src="Images/watercolor-food-dish-collection_23-2147855751.jpg"> <!-- random image -->
+                    <img src="Images/The_second_dishes_Meat_products_Potato_Black_540792_1920x1080.jpg"> <!-- random image -->
                     <div class="caption right-align">
                       <h3>*insert heading*</h3>
                       <h5 class="light grey-text text-lighten-3 hide-on-small-only">Here's our small slogan.</h5>
@@ -92,8 +97,7 @@
         </section>
   
         <!--Section search-->
-  
-        <section id="search" class="section section-search teal darken-1 white-text center scrollspy"></section>
+        <section id="search" class="section section-search teal white-text center scrollspy"></section>
          <div class="container">
            <div class="row">
              <div class="col s12">
@@ -104,53 +108,16 @@
              </div>
            </div>
          </div>
+
   
-         <!--Icon Boxes-->
-         <section class="section section-icons grey ligthen-4 center">
-           <div class="container">
-             <div class="row">
-               <div class="col s12 m4">
-                 <div class="card-panel">
-                   <i class="material-icons large teal-text">room</i>
-                   <h4>Pick Where</h4>
-                   <p>Lorem ipsum dolor sit amet consectetur!</p>
-                 </div>
-               </div>
-               <div class="col s12 m4">
-                  <div class="card-panel">
-                    <i class="material-icons large teal-text">add_a_photo</i>
-                    <h4>add photo</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur!</p>
-                  </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="card-panel">
-                      <i class="material-icons large teal-text">room</i>
-                      <h4>Pick Where</h4>
-                      <p>Lorem ipsum dolor sit amet consectetur!</p>
-                    </div>
-                  </div>
-             </div>
-           </div>
-         </section>
-  
+        <!--Search Bin-->
          <div class="section section-login scrollspy" id="login">
             <div class="container">
               <div class="row">
-                <div class="col s12 m6">
+                <div class="col s24 m12">
                   <div class="card-panel grey lighten-3">
-                    <h5> Please fill out this form</h5>
-                    <div class="input-field">
-                      <input type="text" placeholder="Enter Username">
-                      <label for="Username">Username</label>
-                      <div class="input-field">
-                          <input type="email" placeholder="Enter Email" id="email">
-                          <label for="email">Email</label>
-                        </div>
-                        <div class="input-field">
-                          <textarea class="materialize-textarea" placeholder="Enter Password" id="message"></textarea>
-                          <label for="password">Password</label>
-                        </div>
+                      <div class="data-packery">
+                          <div class="grid" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'></div>
                         <input type="submit" value="Submit" class="btn">
                     </div>
                   </div>
@@ -158,6 +125,35 @@
               </div>
             </div>
           </div> 
+
+          <!--Icon Boxes-->
+         <section class="section section-icons grey ligthen-4 center">
+            <div class="container">
+              <div class="row">
+                <div class="col s12 m4">
+                  <div class="card-panel">
+                    <i class="material-icons large teal-text">room</i>
+                    <h4>Pick Where</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur!</p>
+                  </div>
+                </div>
+                <div class="col s12 m4">
+                   <div class="card-panel">
+                     <i class="material-icons large teal-text">add_a_photo</i>
+                     <h4>add photo</h4>
+                     <p>Lorem ipsum dolor sit amet consectetur!</p>
+                   </div>
+                 </div>
+                 <div class="col s12 m4">
+                     <div class="card-panel">
+                       <i class="material-icons large teal-text">room</i>
+                       <h4>Pick Where</h4>
+                       <p>Lorem ipsum dolor sit amet consectetur!</p>
+                     </div>
+                   </div>
+              </div>
+            </div>
+          </section>
   
          <!-- Section: Follow -->
     <section class="section section-follow teal darken-2 white-text center">
@@ -185,11 +181,8 @@
           </div>
         </div>
       </section>
-  
-      
-  
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        
         <script>
   
            //Sidenav
@@ -233,8 +226,16 @@
                "eggs": null,
              }
            });
-  
 
-            
+      </script>
+      <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="Javascript/keydata.js"></script>
+      <script src="Javascript/flickr.js"></script>
+      <script src="Javascript/yummly.js"></script>
+      <script src="app.js"></script>
+      <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
-</html>
+</html> 

@@ -1,7 +1,7 @@
-.title-logo {
-
+.body {
+    font-family: 'Coiny', cursive;
 }
 
-.navbar navbar-light bg-light {
-    
+.navbar-fixed {
+    background-color: black;
 }
