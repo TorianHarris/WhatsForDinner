@@ -1,18 +1,26 @@
-const diffendpointURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&text=olive+oil&extras=url_o&sort=relevance&content_type=1";
-//https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=YOURAPIKEY&format=json&nojsoncallback=1&text=cats&extras=url_o
+//let flickrQuery = prompt("Name a food");
+const flickrEndpoint = `https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&extras=url_o&sort=relevance&content_type=1`;
 
 //let query = "";
 
 //query = prompt("Search for recipes").trim();
-//getData();
+//getFlickrData();
 
-//function getData() {
+function getFlickrData(query) {
     $.ajax({
-        url: diffendpointURL + `&api_key=${FLICKR_APIKEY}`,
+        url: flickrEndpoint + `&text=${query}+food&api_key=${FLICKR_APIKEY}`,
         method: "GET"
     }).done(function(response){
         console.log(response);
+        let photo = response.photos.photo[0];
+        let url = parsePhotoURL(photo.farm, photo.server, photo.id, photo.secret);
+        recipeResponse(url);
+        console.log(url);
     }).fail(function(error){
         console.log(error);
     })
-//}
+}
+
+function parsePhotoURL (farmID, serverID, ID, secret) {
+    return `https://farm${farmID}.staticflickr.com/${serverID}/${ID}_${secret}.jpg`;
+}
