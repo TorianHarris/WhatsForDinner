@@ -1,4 +1,8 @@
-//create function to retrieve response data
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
+  
+  //create function to retrieve response data
 
 function recipeResponse(response) {
     for (let i = 0; i < response.data.length; i++)
