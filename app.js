@@ -28,7 +28,7 @@ $("#search").on('click', function(event){
     event.preventDefault();
     //getFlickrData($("#search").val());
     getFlickrData($("#foodSearch").val());
-    yummlySearch($("#foodSearch").val())
+    //yummlySearch($("#foodSearch").val())
 });
 
 
