@@ -1,5 +1,5 @@
 //let flickrQuery = prompt("Name a food");
-const flickrEndpoint = `https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&extras=url_o&sort=relevance&content_type=1`;
+const flickrEndpoint = `https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&extras=url_s&sort=relevance&content_type=1`;
 
 //let query = "";
 
@@ -15,6 +15,7 @@ function getFlickrData(query) {
         let photo = response.photos.photo[0];
         let url = parsePhotoURL(photo.farm, photo.server, photo.id, photo.secret);
         recipeResponse(url);
+        displayItem(url);
         console.log(url);
     }).fail(function(error){
         console.log(error);
@@ -24,3 +25,9 @@ function getFlickrData(query) {
 function parsePhotoURL (farmID, serverID, ID, secret) {
     return `https://farm${farmID}.staticflickr.com/${serverID}/${ID}_${secret}.jpg`;
 }
+
+$("#recipe-search").on("click", function(event)
+{
+    event.preventDefault();
+    getFlickrData($("#ingredient-search").val());
+});
