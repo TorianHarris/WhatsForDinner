@@ -120,12 +120,23 @@
           <div class="col s24 m12">
             <div class="card-panel grey lighten-3">
               <div class="data-packery">
+                <!-- not sure if data-packery should be here? -->
                 <div class="grid" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'></div>
-                <input type="submit" value="Submit" class="btn">
+                <input id="searchIngredient" type="submit" value="Submit" class="btn">
               </div>
             </div>
           </div>
         </div>
+            <!--Recipe Div-->
+    <div class="container mx-0 px-0 grid">
+        <div class="row">
+          <div id="recipeArea" class="col-sm-4 d-flex flex-column" data-packery="{ 'itemSelector': '.grid-item', 'gutter': 10 }">Ingredients</div>
+        </div>
+        <div id="cartArea" class="col-sm-4 d-flex flex-column" data-packery="{ 'itemSelector': '.grid-item', 'gutter': 10 }">Cart</div>
+        </div>
+      
+        
+      </div>
       </div>
     </div>
 
@@ -185,12 +196,7 @@
       </div>
     </section>
 
-    <!--Recipe Div-->
-    <div class="container">
-      <div class="row no-gutters">
-        <div id="recipeArea" class="col-12 col-sm-6 col-md-8"></div>
-      </div>
-    </div>
+
 
     <nav class="navbar navbar-light bg-light">
       <form class="form-inline">
@@ -204,11 +210,11 @@
     <script src="Javascript/keydata.js"></script>
     <script src="Javascript/flickr.js"></script>
     <script src="Javascript/yummly.js"></script>
-    <script src="app.js"></script>
+    
     <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <script src="Javascript/app.js"></script>
     <script>
 
       //Sidenav
