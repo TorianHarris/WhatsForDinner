@@ -10,28 +10,27 @@ let maxCookingTime = "";
 //Ajax call, takes query as a paramater
 let ingredients = ["pepper", "steak", "cream"];
 
-function addIngredients() {
+function addIngredients(items) {
     let string = "";
-    ingredients.forEach(function(item){
+    items.forEach(function (item) {
         string += "&allowedIngredient[]=" + item;
     })
     return string;
 }
 
-function yummlySearch(query) {
+function yummlySearch(items) {
     $.ajax({
         url: yummlyEndpoint + `_app_id=${YUMMLY_APIID}&_app_key=${YUMMLY_APIKEY}
-        &requirePictures=true&q=${query.replace(" ", "+")}${addIngredients()}`,
+        &requirePictures=true${addIngredients(items)}`,
         method: "GET"
-    }).done(function(response){
+    }).done(function (response) {
         console.log(response);
-        for(let i = 0; i < response.matches.length; i++)
-        {
+        for (let i = 0; i < response.matches.length; i++) {
             //if(response.matches[i].ingredients.length < 10)
             yummlyGet(response.matches[i].id);
         }
         //call function to send info to
-    }).fail(function(error){
+    }).fail(function (error) {
         console.log(error);
     })
 }
@@ -40,7 +39,7 @@ function yummlyGet(query) {
     $.ajax({
         url: `https://api.yummly.com/v1/api/recipe/${query}?` + `_app_id=${YUMMLY_APIID}&_app_key=${YUMMLY_APIKEY}`,
         method: "GET"
-    }).done(function(response){
+    }).done(function (response) {
         //console.log(response);
         let recipe = {
             url: response.attribution.url,
@@ -49,7 +48,14 @@ function yummlyGet(query) {
             prepTime: response.totalTimeInSeconds / 60
         }
         console.log(recipe);
-    }).fail(function(error){
+    }).fail(function (error) {
         console.log(error);
     })
 }
+
+$("#recipe-get").on("click", function () {
+    let array = $("#bin-panel .board-item").map(function () {
+        return $(this).attr("data-name");
+    }).get();
+    yummlySearch(array);
+})

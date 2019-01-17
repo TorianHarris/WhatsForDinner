@@ -96,3 +96,7 @@
       display: none;
     }
   }
+  .item-image {
+    width:200px;
+    height:200px;
+  }

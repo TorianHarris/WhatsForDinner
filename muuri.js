@@ -1,7 +1,6 @@
 var itemContainers = [].slice.call(document.querySelectorAll('.board-column-content-drag'));
 var columnGrids = [];
 var boardGrid;
-
 // Define the column grids so we can drag those
 // items around.
 itemContainers.forEach(function (container) {
@@ -68,16 +67,11 @@ boardGrid = new Muuri('.board', {
   dragReleaseEasing: 'ease'
 });
 
-function displayItem(url) {
-    let item = $("<div>").addClass("board-item newItem muuri-item muuri-item-shown");
+function displayItem(url, name) {
+    let item = $("<div>").addClass("board-item").attr("data-name", name);
     let content = $("<div>").addClass("board-item-content");
-    let image = $("<img>").attr("src", url);
+    let image = $("<img>").attr("src", url).addClass("item-image");
     item.append(content.append(image));
-
-    //columnGrids[0].add([item]);
-    $("#pantry").append(item.append(content.append(image)));
-    columnGrids.forEach(function (grid) {
-        grid.refreshItems();
-      });
-    //console.log($("#ingredient-search").val());
+    columnGrids[0].add(item.get());
+    $("#pantry").append(item);
 }

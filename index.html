@@ -106,12 +106,12 @@
         <div class="col s12">
           <h3> Search Ingredient</h3>
           <div class="input-field">
-            <input id="ingredient-search" type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="tomato, broccoli, etc...">
+            <input id="ingredient-search" type="text" class="white grey-text autocomplete" id="autocomplete-input"
+              placeholder="tomato, broccoli, etc...">
           </div>
         </div>
       </div>
     </div>
-
 
     <!--Search Bin-->
     <div class="section section-login scrollspy" id="login">
@@ -122,12 +122,44 @@
               <div class="data-packery">
                 <div class="grid" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'></div>
                 <input type="submit" value="Submit" id="recipe-search" class="btn">
+                <input type="submit" value="Get Recipes" id="recipe-get" class="btn">
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="board">
+      <div class="board-column todo">
+        <div class="board-column-header">Pantry</div>
+        <div style="overflow: scroll">
+          <div class="board-column-content-drag" id="pantry-panel">
+            <!-- <div class="board-item">
+                  <div class="board-item-content"><span>Item #</span>1</div>
+                </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="board-column working">
+        <div class="board-column-header">Bin</div>
+        <div style="overflow: scroll">
+          <div class="board-column-content-drag" id="bin-panel">
+            <!-- <div class="board-item">
+                  <div class="board-item-content"><span>Item #</span>1</div>
+                </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="board-column done">
+        <div class="board-column-header">Recipes</div>
+        <div class="board-column-content-recipes" id="recipes-panel">
+
+        </div>
+      </div>
+    </div>
+
+    <br>
 
     <!--Icon Boxes-->
     <section class="section section-icons grey ligthen-4 center">
@@ -185,58 +217,7 @@
       </div>
     </section>
 
-    <div class="board">
-      <div class="board-column todo">
-        <div class="board-column-header">Pantry</div>
-        <div style="overflow: scroll">
-            <div class="board-column-content-drag" id="pantry">
-                <!-- <div class="board-item">
-                  <div class="board-item-content"><span>Item #</span>1</div>
-                </div>
-                <div class="board-item">
-                  <div class="board-item-content"><span>Item #</span>2</div>
-                </div>
-                <div class="board-item">
-                  <div class="board-item-content"><span>Item #</span>3</div>
-                </div>
-                <div class="board-item">
-                  <div class="board-item-content"><span>Item #</span>4</div>
-                </div>
-                <div class="board-item">
-                  <div class="board-item-content"><span>Item #</span>5</div>
-                </div> -->
-              </div>
-        </div>
-      </div>
-      <div class="board-column working">
-        <div class="board-column-header">Working</div>
-        <div class="board-column-content-drag">
-          <div class="board-item">
-            <div class="board-item-content"><span>Item #</span>6</div>
-          </div>
-          <!-- <div class="board-item">
-            <div class="board-item-content"><span>Item #</span>7</div>
-          </div>
-          <div class="board-item">
-            <div class="board-item-content"><span>Item #</span>8</div>
-          </div>
-          <div class="board-item">
-            <div class="board-item-content"><span>Item #</span>9</div>
-          </div>
-          <div class="board-item">
-            <div class="board-item-content"><span>Item #</span>10</div>
-          </div> -->
-        </div>
-      </div>
-      <div class="board-column done">
-        <div class="board-column-header">Done</div>
-        <div class="board-column-content-recipes">
-
-        </div>
-      </div>
-    </div>
-
-    <!--Recipe Div-->
+    <!-- Recipe Div
     <div class="container">
       <div class="row no-gutters">
         <div id="recipeArea" class="col-12 col-sm-6 col-md-8"></div>
@@ -248,7 +229,7 @@
         <input id="foodSearch" class="form-control mr-sm-2" type="search" placeholder="Enter food" aria-label="Search">
         <button id="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-    </nav>
+    </nav> -->
 
     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
