@@ -1,27 +1,7 @@
 $(document).ready(function(){
     $('.parallax').parallax();
   });
-  
-// //create global for query search
-// let querySearch = $("#foodSearch");
 
-// const endpointURL = "https://api.yummly.com/v1/api/recipes?";
-
-
-// //Ajax call
-// function getData() {
-//     $.ajax({
-//         url: endpointURL + `_app_id=${YUMMLY_APIID}&_app_key=${YUMMLY_APIKEY}&requirePictures=true
-//         &q=${querySearch.replace(" ", "+")}`,
-//         method: "GET"
-
-//     }).done(function (response) {
-//         console.log(response);
-
-//     }).fail(function (error) {
-//         console.log(error);
-//     });
-// };
 
 //create click function to pass query to web services call
 $("#search").on('click', function(event){
