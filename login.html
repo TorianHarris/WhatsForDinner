@@ -9,9 +9,14 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="Javascript/firebase.js"></script>
     <title>What's for Dinner?</title>
-<style>
-body{
+
+    <style>
+        body{
     margin: 0;
     padding: 0;
     background: url("restaurant-S10.jpg");
@@ -101,18 +106,8 @@ h1{
 
 </style>
 </head>
-<body>
-    <div class="loginbox">
-        <img src="Images/blank-profile-picture-973460_960_720.png" class="avatar">
-        <h4>Login Here</h4>
-        <form>
-            <!--Firebase inputs username & password fields-->
-            <input type="submit" name="" value="Login">
-            <a href="#">Lost your password?</a><br>
-            <a href="#">Don't have an account?</a>
-        </form>
-    </div>
 
+<body>
     <!--NAVBAR-->
     <div class="navbar-fixed">
         <nav class=black>
@@ -160,17 +155,18 @@ h1{
         </ul>
     </div>
     <div id="firebaseui-auth-container"></div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-    //Sidenav
-    const sideNav = document.querySelector('.sidenav');
-      M.Sidenav.init(sideNav, {});
+        //Sidenav
+        const sideNav = document.querySelector('.sidenav');
+        M.Sidenav.init(sideNav, {});
 
-    //Scrollspy
-    const ss = document.querySelectorAll('.scrollspy');
-      M.ScrollSpy.init(ss, {});
+        //Scrollspy
+        const ss = document.querySelectorAll('.scrollspy');
+        M.ScrollSpy.init(ss, {});
     </script>
 </body>
+
 </html>

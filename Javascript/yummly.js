@@ -1,15 +1,5 @@
 const yummlyEndpoint = "https://api.yummly.com/v1/api/recipes?";
 
-//let query = "onion soup";
-// todo: convert cooking minutes to seconds
-//  add cooking time param
-let maxCookingTime = "";
-
-//query = prompt("Search for recipes").trim();
-
-//Ajax call, takes query as a paramater
-let ingredients = ["pepper", "steak", "cream"];
-
 function addIngredients(items) {
     let string = "";
     items.forEach(function (item) {
@@ -21,7 +11,7 @@ function addIngredients(items) {
 function yummlySearch(items) {
     $.ajax({
         url: yummlyEndpoint + `_app_id=${YUMMLY_APIID}&_app_key=${YUMMLY_APIKEY}
-        &requirePictures=true${addIngredients(items)}`,
+        &requirePictures=true${addIngredients(items)}&maxTotalTimeInSeconds=${$("#prep-time-search").val() * 60}`,
         method: "GET"
     }).done(function (response) {
         console.log(response);
@@ -29,7 +19,6 @@ function yummlySearch(items) {
             //if(response.matches[i].ingredients.length < 10)
             yummlyGet(response.matches[i].id);
         }
-        //call function to send info to
     }).fail(function (error) {
         console.log(error);
     })
@@ -40,22 +29,37 @@ function yummlyGet(query) {
         url: `https://api.yummly.com/v1/api/recipe/${query}?` + `_app_id=${YUMMLY_APIID}&_app_key=${YUMMLY_APIKEY}`,
         method: "GET"
     }).done(function (response) {
-        //console.log(response);
         let recipe = {
             url: response.attribution.url,
-            picture: response.images[0].hostedLargeUrl,
+            picture: response.images[0].hostedSmallUrl,
             name: response.name,
             prepTime: response.totalTimeInSeconds / 60
         }
-        console.log(recipe);
+        recipeDisplay(recipe);
     }).fail(function (error) {
         console.log(error);
     })
 }
 
+// recipe info is sent here and displayed
+// recipe is an object to has 4 values: url, picture, name, and prepTime
+function recipeDisplay(recipe) {
+    let item = $("<div>");
+    let url = $("<a>").attr("href", recipe.url).attr("target", "_blank");
+    let picture = $("<img>").attr("src", recipe.picture);
+    url.append(picture);
+    let name = $("<p>").text(recipe.name);
+    let prepTime = $("<p>").text("Cooking Time: " + recipe.prepTime + " minutes");
+    item.append(url, name, prepTime);
+    $("#recipes-panel").append(item);
+}
+
+// to be moved to app.js
 $("#recipe-get").on("click", function () {
     let array = $("#bin-panel .board-item").map(function () {
         return $(this).attr("data-name");
     }).get();
     yummlySearch(array);
 })
+
+
