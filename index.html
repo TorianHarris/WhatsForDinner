@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <title>Document</title>
+  <title>What's for Dinner?</title>
   <style>
     body {
       font-family: 'Satisfy', cursive;
@@ -46,7 +46,8 @@
                 <a href="#pantry">My Pantry</a>
               </li>
               <li>
-                <a href="login.html">Login</a>
+                <a href="/login.html">Login</a>
+                <a href="/login.html">About Page</a>
               </li>
             </ul>
           </div>
@@ -65,7 +66,7 @@
           <a href="#pantry">My Pantry</a>
         </li>
         <li>
-          <a href="#Login">Login</a>
+          <a href="/login.html">Login</a>
         </li>
       </ul>
     </div>
@@ -110,7 +111,7 @@
             <input id="ingredient-search" type="text" class="white grey-text autocomplete" id="autocomplete-input"
               placeholder="tomato, broccoli, etc...">
             <input id="prep-time-search" type="number" class="white grey-text autocomplete" id="autocomplete-input"
-              placeholder="30 mins...">
+              placeholder="enter amount of time (mins)">
           </div>
         </div>
       </div>
@@ -120,12 +121,12 @@
     <div class="section section-login scrollspy" id="login">
       <div class="container">
         <div class="row">
-          <div class="col s24 m12">
-            <div class="card-panel antiquewhite lighten-3">
+          <div class="col s24 m6">
+            <div class="card-panel transparent lighten-3">
               <div class="data-packery">
                 <div class="grid" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'></div>
-                <input type="submit" value="Submit" id="recipe-search" class="btn">
-                <input type="submit" value="Get Recipes" id="recipe-get" class="btn">
+                <input type="submit" value="Submit" id="recipe-search" class="lime btn">
+                <input type="submit" value="Get Recipes" id="recipe-get" class="lime btn">
               </div>
             </div>
           </div>
@@ -135,9 +136,9 @@
 
     <div class="board">
       <div class="board-column todo">
-        <div class="board-column-header">Pantry</div>
+        <div class="lime board-column-header">Pantry</div>
         <div style="overflow: scroll">
-          <div class="board-column-content-drag" id="pantry-panel">
+          <div class="lime board-column-content-drag" id="pantry-panel">
             <!-- <div class="board-item">
                   <div class="board-item-content"><span>Item #</span>1</div>
                 </div> -->
@@ -145,9 +146,9 @@
         </div>
       </div>
       <div class="board-column working">
-        <div class="board-column-header">Bin</div>
+        <div class="lime board-column-header">Bin</div>
         <div style="overflow: scroll">
-          <div class="board-column-content-drag" id="bin-panel">
+          <div class="lime board-column-content-drag" id="sbin-panel">
             <!-- <div class="board-item">
                   <div class="board-item-content"><span>Item #</span>1</div>
                 </div> -->
@@ -155,9 +156,9 @@
         </div>
       </div>
       <div class="board-column done">
-        <div class="board-column-header">Recipes</div>
+        <div class="lime board-column-header">Recipes</div>
         <div style="overflow: scroll">
-          <div class="board-column-content-recipes" id="recipes-panel">
+          <div class="lime board-column-content-recipes" id="recipes-panel">
 
           </div>
         </div>
@@ -288,10 +289,24 @@
           "eggs": null,
         }
       });
+     
+      //User Input Validation
+      function myFunction() {
+  var x, text;
 
+  // Get the value of the input field with id="numb"
+  x = document.getElementById("recipe-search").value;
+
+  // If x is Not a Number or less than one or greater than 10
+  if (isNaN(x) || x < 1 || x > 1000) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("recipe-search").innerHTML = text;
+}
     </script>
     <!--Form-->
 
   </body>
-
 </html>
