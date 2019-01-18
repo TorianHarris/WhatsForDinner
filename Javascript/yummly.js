@@ -41,25 +41,8 @@ function yummlyGet(query) {
     })
 }
 
-// recipe info is sent here and displayed
-// recipe is an object to has 4 values: url, picture, name, and prepTime
-function recipeDisplay(recipe) {
-    let item = $("<div>");
-    let url = $("<a>").attr("href", recipe.url).attr("target", "_blank");
-    let picture = $("<img>").attr("src", recipe.picture);
-    url.append(picture);
-    let name = $("<p>").text(recipe.name);
-    let prepTime = $("<p>").text("Cooking Time: " + recipe.prepTime + " minutes");
-    item.append(url, name, prepTime);
-    $("#recipes-panel").append(item);
-}
 
-// to be moved to app.js
-$("#recipe-get").on("click", function () {
-    let array = $("#bin-panel .board-item").map(function () {
-        return $(this).attr("data-name");
-    }).get();
-    yummlySearch(array);
-})
+
+
 
 

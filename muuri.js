@@ -67,11 +67,3 @@ boardGrid = new Muuri('.board', {
   dragReleaseEasing: 'ease'
 });
 
-function displayItem(url, name) {
-    let item = $("<div>").addClass("board-item").attr("data-name", name);
-    let content = $("<div>").addClass("board-item-content");
-    let image = $("<img>").attr("src", url).addClass("item-image");
-    item.append(content.append(image));
-    columnGrids[0].add(item.get());
-    $("#pantry").append(item);
-}

@@ -8,7 +8,6 @@ function getFlickrData(query) {
         console.log(response);
         let photo = response.photos.photo[0];
         let url = parsePhotoURL(photo.farm, photo.server, photo.id, photo.secret);
-        //recipeResponse(url);
         displayItem(url, query);
         console.log(url);
     }).fail(function(error){
@@ -20,9 +19,4 @@ function parsePhotoURL (farmID, serverID, ID, secret) {
     return `https://farm${farmID}.staticflickr.com/${serverID}/${ID}_${secret}.jpg`;
 }
 
-//to be moved to app.js
-$("#recipe-search").on("click", function(event) {
-    event.preventDefault();
-    getFlickrData($("#ingredient-search").val());
-    $("#ingredient-search").val("");
-});
+
