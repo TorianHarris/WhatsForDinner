@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's for Dinner?</title>
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <title>What's for Dinner?</title>
+</head>
+<style>
+        body {
+          font-family: 'Satisfy', cursive;
+          font-size: 48px;
+          background-color:antiquewhite;
+        }
+
+        h1{
+            color:black;
+            text-align: left;
+            margin: 80px;
+            font-size: 50px;
+        }
+
+        p{
+            font-size: 27px;
+            text-align: left;
+            margin: 80px;
+        }
+        
+      </style>
+<body>
+        <body id="home" class="scrollspy">
+
+                <!--NAVBAR-->
+                <div class="navbar-fixed">
+                  <nav class=black>
+                    <div class="container">
+                      <div class="nav-wrapper">
+                        <a href="#" class="brand-logo"> What's for Dinner</a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                          <i class="material-icons">menu</i>
+                        </a>
+                        <ul class="right hide-on-med-and-down">
+                          <li>
+                            <a href="index.html">Home</a>
+                          </li>
+                          <li>
+                            <a href="index.html">Search</a>
+                          </li>
+                          <li>
+                            <a href="#pantry">My Pantry</a>
+                          </li>
+                          <li>
+                            <a href="login.html">Login</a>
+                          </li>
+                          <li>
+                            <a href="about.html">About Page</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+                <div>
+                  <ul class="sidenav" id="mobile-nav">
+                    <li>
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                      <a href="index.html">Search</a>
+                    </li>
+                    <li>
+                      <a href="#pantry">My Pantry</a>
+                    </li>
+                    <li>
+                      <a href="login.html">Login</a>
+                    </li>
+                    <li>
+                      <a href="about.html">About Page</a>
+                    </li>
+                  </ul>
+                </div>
+
+            <h1>How We Work</h1>
+            <p>Our application takes your ingredients, and returns images of each ingredient for verification. Let us know how much time 
+            you have to cook. The amount of time and ingredients will then be used to search for recipes. Then you can create with dishes 
+            based on ingredients you already have in your kitchen. No one wants to waste food, money, or time. </p>
+            <h1>Our Developers</h1>
+            <p>Project Manager - AJ Imoukhuede</p>
+            <p>Backend - Javascipt & jQuery - Natalia Wilson</p>
+            <p>Backend - API & Firebase - Torian Harris</p>
+            <p>Frontend - HTML & CSS - Tiana Wiggins</p>
+
+            </div>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        //Sidenav
+        const sideNav = document.querySelector('.sidenav');
+        M.Sidenav.init(sideNav, {});
+        
+        //Scrollspy
+        const ss = document.querySelectorAll('.scrollspy');
+        M.ScrollSpy.init(ss, {});
+        </script>
+</body>
+</html>
