@@ -2,34 +2,57 @@ $(document).ready(function(){
     $('.parallax').parallax();
   });
 
-
-//create click function to pass query to web services call
-$("#search").on('click', function(event){
+  //to be moved to app.js
+$("#recipe-search").on("click", function(event) {
     event.preventDefault();
-    //getFlickrData($("#search").val());
-    getFlickrData($("#foodSearch").val());
-    //yummlySearch($("#foodSearch").val())
+    getFlickrData($("#ingredient-search").val());
+    $("#ingredient-search").val("");
 });
 
-
-
-function recipeResponse(response) {
-    //for (var i = 0; i < response.data.length; i++) {
-
-        //this a container to hold our list items 
-        var resultsContainer = $("<div class= 'col-sm-4'></div>");
-
-        //set recipeDiv to a list item
-        var recipeDiv = $("<img class='img-fluid img-thumbnail' style='width: 100%; height: 100%;'>");
-
-        // give the <li> tag a 'src' attribute which is equal to the url
-        recipeDiv.attr('src', response);
-
-        //append our recipeDiv to the resultsContainer
-        resultsContainer.append(recipeDiv);
-
-        //append resultsContainer to DOM
-        $("#recipeArea").append(resultsContainer);
-    //};
+function displayItem(url, name) {
+    let item = $("<div>").addClass("board-item").attr("data-name", name);
+    let content = $("<div>").addClass("board-item-content");
+    let image = $("<img>").attr("src", url).addClass("item-image");
+    let card = $("<div>").addClass("card");
+    image.addClass("card-img-top");
+    let divP = $("<div>").addClass("card-body");
+    let p = $("<p>").addClass("card-text");
+    p.append(name);
+    divP.append(p);
+    image.append(divP);
+    card.append(image);
+    item.append(card);
+    item.append(content.append(image));
+    columnGrids[0].add(item.get());
+    $("#pantry").append(item);
 };
+
+// to be moved to app.js
+$("#recipe-get").on("click", function () {
+    let array = $("#bin-panel .board-item").map(function () {
+        return $(this).attr("data-name");
+    }).get();
+    yummlySearch(array);
+});
+
+// recipe info is sent here and displayed
+// recipe is an object to has 4 values: url, picture, name, and prepTime
+function recipeDisplay(recipe) {
+    let item = $("<div>");
+    let url = $("<a>").attr("href", recipe.url).attr("target", "_blank");
+    let picture = $("<img>").attr("src", recipe.picture);
+    url.append(picture);
+    let recCard = $("<div>").addClass("card");
+    picture.addClass("card-img-top");
+    let recCardBody = $("<div>").addClass("card-body");
+    let name = $("<p>").text(recipe.name);
+    let prepTime = $("<p>").text("Cooking Time: " + recipe.prepTime + " minutes");
+    name.addClass("card-text");
+    prepTime.addClass("card-text");
+    recCardBody.append(prepTime, name);
+    recCard.append(picture, recCardBody);
+    item.append(recCard);
+    $("#recipes-panel").append(item);
+};
+
 
