@@ -19,7 +19,6 @@ function yummlySearch(items) {
             //if(response.matches[i].ingredients.length < 10)
             yummlyGet(response.matches[i].id);
         }
-        //call function to send info to
     }).fail(function (error) {
         console.log(error);
     })
@@ -30,7 +29,6 @@ function yummlyGet(query) {
         url: `https://api.yummly.com/v1/api/recipe/${query}?` + `_app_id=${YUMMLY_APIID}&_app_key=${YUMMLY_APIKEY}`,
         method: "GET"
     }).done(function (response) {
-        //console.log(response);
         let recipe = {
             url: response.attribution.url,
             picture: response.images[0].hostedSmallUrl,

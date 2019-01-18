@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="Javascript/firebase.js"></script>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <div class="navbar-fixed">
+        <nav class=transparent>
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo"> What's for Dinner</a>
+                    <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#Search">Search</a>
+                        </li>
+                        <li>
+                            <a href="#pantry">My Pantry</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <ul class="sidenav" id="mobile-nav">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="#Search">Search</a>
+            </li>
+            <li>
+                <a href="#pantry">My Pantry</a>
+            </li>
+            <li>
+                <a href="#Login">Login</a>
+            </li>
+        </ul>
+    </div>
+    <div id="firebaseui-auth-container"></div>
+</body>
+
+</html>
