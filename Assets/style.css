@@ -100,3 +100,8 @@
     width:200px;
     height:200px;
   }
+  .input-error {
+    font-size: 12px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+  }
