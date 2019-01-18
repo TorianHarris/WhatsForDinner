@@ -8,11 +8,18 @@
   <link rel="stylesheet" href="Assets/style.css">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
   <!--Import materialize.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <title>Document</title>
-
+  <style>
+    body {
+      font-family: 'Satisfy', cursive;
+      font-size: 48px;
+      background-color:antiquewhite;
+    }
+    
+  </style>
 </head>
 
 <body>
@@ -41,9 +48,6 @@
               <li>
                 <a href="#Login">Login</a>
               </li>
-              <li>
-                <a href="#Recipes">Recipes</a>
-              </li>
             </ul>
           </div>
         </div>
@@ -63,9 +67,6 @@
         <li>
           <a href="#Login">Login</a>
         </li>
-        <li>
-          <a href="#Recipes">Recipes</a>
-        </li>
       </ul>
     </div>
 
@@ -76,31 +77,28 @@
           <img src="Images/restaurant-S10.jpg"> <!-- random image -->
           <div class="caption center-align">
             <h3>Enter ingredients from your pantry and go!</h3>
-            <h5 class="light grey-text text-lighten-3 hide-on-small-only">Don't waste time or food.</h5>
+            <h5 class="light grey-text text-lighten-3 hide-on-small-only">Don't waste time or energy going to the store. You've got just what you need at home.</h5>
           </div>
         </li>
         <li>
           <img src="Images/italian-food-background.jpg"> <!-- random image -->
           <div class="caption left-align">
-            <h3>100+ Recipes</h3>
-            <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Adipisci est, ratione deleniti, error sit natus, magni alias perferendis aut
-              repellendus voluptates placeat laudantium maxime distinctio asperiores harum voluptatum. Nemo,
-              recusandae.</h5>
+            <h3>Over 100+ Recipes</h3>
+            <h5 class="light grey-text text-lighten-3 hide-on-small-only">With the ingredients from your pantry, you can learn how to make great meals! </h5>
           </div>
         </li>
         <li>
           <img src="Images/The_second_dishes_Meat_products_Potato_Black_540792_1920x1080.jpg"> <!-- random image -->
           <div class="caption right-align">
-            <h3>*insert heading*</h3>
-            <h5 class="light grey-text text-lighten-3 hide-on-small-only">Here's our small slogan.</h5>
+            <h3>Share photos of your meals!</h3>
+            <h5 class="light grey-text text-lighten-3 hide-on-small-only">We love seeing your creations. Share them with us through social media.</h5>
           </div>
         </li>
       </ul>
     </section>
 
     <!--Section search-->
-    <section id="search" class="section section-search teal white-text center scrollspy"></section>
+    <section id="search" class="section section-search lime white-text center scrollspy"></section>
     <div class="container">
       <div class="row">
         <div class="col s12">
@@ -120,7 +118,7 @@
       <div class="container">
         <div class="row">
           <div class="col s24 m12">
-            <div class="card-panel grey lighten-3">
+            <div class="card-panel antiquewhite lighten-3">
               <div class="data-packery">
                 <div class="grid" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'></div>
                 <input type="submit" value="Submit" id="recipe-search" class="btn">
@@ -156,7 +154,6 @@
       <div class="board-column done">
         <div class="board-column-header">Recipes</div>
         <div class="board-column-content-recipes" id="recipes-panel">
-
         </div>
       </div>
     </div>
@@ -169,23 +166,20 @@
         <div class="row">
           <div class="col s12 m4">
             <div class="card-panel">
-              <i class="material-icons large teal-text">room</i>
-              <h4>Pick Where</h4>
-              <p>Lorem ipsum dolor sit amet consectetur!</p>
+              <i class="material-icons large lime-text">access_time</i>
+              <h4>Add a time</h4>
             </div>
           </div>
           <div class="col s12 m4">
             <div class="card-panel">
-              <i class="material-icons large teal-text">add_a_photo</i>
-              <h4>add photo</h4>
-              <p>Lorem ipsum dolor sit amet consectetur!</p>
+              <i class="material-icons large lime-text">add_a_photo</i>
+              <h4>Add a photo</h4>
             </div>
           </div>
           <div class="col s12 m4">
             <div class="card-panel">
-              <i class="material-icons large teal-text">room</i>
-              <h4>Pick Where</h4>
-              <p>Lorem ipsum dolor sit amet consectetur!</p>
+              <i class="material-icons large lime-text">archive</i>
+              <h4>Save Ingredients</h4>
             </div>
           </div>
         </div>
@@ -193,7 +187,7 @@
     </section>
 
     <!-- Section: Follow -->
-    <section class="section section-follow teal darken-2 white-text center">
+    <section class="section section-follow lime darken-2 white-text center">
       <div class="container">
         <div class="row">
           <div class="col s12">
