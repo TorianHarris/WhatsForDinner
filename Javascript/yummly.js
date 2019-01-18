@@ -59,7 +59,17 @@ $("#recipe-get").on("click", function () {
     let array = $("#bin-panel .board-item").map(function () {
         return $(this).attr("data-name");
     }).get();
-    yummlySearch(array);
+    if($("#prep-time-search").val() == "") {
+        $("#recipe-get-error").text("Input required.");
+    }
+    else if (array.length < 1) {
+        $("#submit-error").text("Add items to the bin to get recipes.")
+    }
+    else {
+        yummlySearch(array);
+        $("#recipe-get-error").text("");
+        $("#submit-error").text("");
+    }
 })
 
 

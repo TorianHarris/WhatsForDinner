@@ -23,6 +23,12 @@ function parsePhotoURL (farmID, serverID, ID, secret) {
 //to be moved to app.js
 $("#recipe-search").on("click", function(event) {
     event.preventDefault();
-    getFlickrData($("#ingredient-search").val());
-    $("#ingredient-search").val("");
+    if($("#ingredient-search").val() == "") {
+        $("#ingredient-search-error").text("Input required.");
+    }
+    else {
+        getFlickrData($("#ingredient-search").val());
+        $("#ingredient-search").val("");
+        $("#ingredient-search-error").text("");
+    }
 });
