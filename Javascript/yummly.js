@@ -31,7 +31,7 @@ function yummlyGet(query) {
     }).done(function (response) {
         let recipe = {
             url: response.attribution.url,
-            picture: response.images[0].hostedMediumUrl,
+            picture: response.images[0].hostedLargeUrl,
             name: response.name,
             prepTime: response.totalTimeInSeconds / 60
         }
@@ -89,6 +89,7 @@ $("#recipe-get").on("click", function () {
         $("#recipe-get-error").text("");
     }
     else {
+        $("#recipes-panel").empty();
         yummlySearch(array);
         $("#recipe-get-error").text("");
         $("#submit-error").text("");

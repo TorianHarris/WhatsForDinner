@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,98 +14,95 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <script src="Javascript/firebase.js"></script>
+    <script src="Javascript/firebaseAuth.js"></script>
     <title>What's for Dinner?</title>
 
     <style>
-        body{
-    margin: 0;
-    padding: 0;
-    background: url("restaurant-S10.jpg");
-    background-size: cover;
-    background-position: center;
-    font-family: 'Satisfy', cursive;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("restaurant-S10.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: 'Satisfy', cursive;
+        }
 
-.loginbox{
-    width: 420px;
-    background: #000;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding: 70px 30px;
-}
+        .loginbox {
+            width: 420px;
+            background: #000;
+            color: #fff;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            padding: 70px 30px;
+        }
 
-.avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -10%;
-    left: calc(50% - 60%);
-}
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: -10%;
+            left: calc(50% - 60%);
+        }
 
-h1{
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
-}
+        h1 {
+            margin: 0;
+            padding: 0 0 20px;
+            text-align: center;
+            font-size: 22px;
+        }
 
-.loginbox p{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
+        .loginbox p {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
 
-.loginbox input{
-    width: 100%;
-    margin-bottom: 20px;
-}
+        .loginbox input {
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
-.loginbox input[type="text"], input[type="password"]
-{
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
-    color:#fff;
-    font-size: 16px;
-}
+        .loginbox input[type="text"],
+        input[type="password"] {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
 
-.loginbox input[type="submit"]
-{
-    border: none;
-    outline: 40px;
-    background: darkred;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
-}
+        .loginbox input[type="submit"] {
+            border: none;
+            outline: 40px;
+            background: darkred;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+        }
 
-.loginbox input[type="submit"]:hover
-{
-    cursor: pointer;
-    background: #ffc107;
-    color: #000;
-}
+        .loginbox input[type="submit"]:hover {
+            cursor: pointer;
+            background: #ffc107;
+            color: #000;
+        }
 
-.loginbox a{
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: darkgrey;
-}
+        .loginbox a {
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 20px;
+            color: darkgrey;
+        }
 
-.loginbox a:hover{
-    color:#ffc107;
-}
-
-
-</style>
+        .loginbox a:hover {
+            color: #ffc107;
+        }
+    </style>
 </head>
 
 <body>
@@ -128,10 +126,13 @@ h1{
                             <a href="#pantry">My Pantry</a>
                         </li>
                         <li>
-                            <a href="login.html">Login</a>
+                            <a href="login.html" id="sign-in">Login</a>
                         </li>
                         <li>
                             <a href="about.html">About Page</a>
+                        </li>
+                        <li>
+                            <a id="sign-in-status"></a>
                         </li>
                     </ul>
                 </div>
@@ -150,7 +151,10 @@ h1{
                 <a href="#pantry">My Pantry</a>
             </li>
             <li>
-                <a href="login.html">Login</a>
+                <a href="login.html" id="sign-in">Login</a>
+            </li>
+            <li>
+                <p id="sign-in-status"></p>
             </li>
         </ul>
     </div>
