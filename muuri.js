@@ -74,7 +74,7 @@ function displayItem(url, name) {
     let imageContainer = $("<div>").addClass("card-image");
     let image = $("<img>").attr("src", url).addClass("item-image");
     let cardContent = $("<div>").addClass("card-content");
-    let title = $("<p>").text(name);
+    let title = $("<p>").text(name).addClass("card-text");
     
     imageContainer.append(image);
     cardContent.append(title)
