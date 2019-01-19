@@ -78,7 +78,7 @@
   .board-item.muuri-item-hidden {
     z-index: 0;
   }
-  .board-item-content {
+  /* .board-item-content {
     position: relative;
     padding: 20px;
     background: #fff;
@@ -87,7 +87,7 @@
     cursor: pointer;
     -webkit-box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
     box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
-  }
+  } */
   @media (max-width: 600px) {
     .board-item-content {
       text-align: center;
@@ -104,4 +104,7 @@
     font-size: 12px;
     color: red;
     font-family: Arial, Helvetica, sans-serif;
+  }
+  .card {
+    /* max-width: 100px; */
   }

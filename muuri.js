@@ -70,8 +70,30 @@ boardGrid = new Muuri('.board', {
 function displayItem(url, name) {
     let item = $("<div>").addClass("board-item").attr("data-name", name);
     let content = $("<div>").addClass("board-item-content");
+    let card = $("<div>").addClass("card");
+    let imageContainer = $("<div>").addClass("card-image");
     let image = $("<img>").attr("src", url).addClass("item-image");
-    item.append(content.append(image));
+    let cardContent = $("<div>").addClass("card-content");
+    let title = $("<p>").text(name);
+    
+    imageContainer.append(image);
+    cardContent.append(title)
+    card.append(imageContainer).append(cardContent);
+    item.append(content.append(card));
     columnGrids[0].add(item.get());
     $("#pantry").append(item);
+
+    // <div class="card">
+    //     <div class="card-image">
+    //       <img src="images/sample-1.jpg">
+    //       <span class="card-title">Card Title</span>
+    //     </div>
+    //     <div class="card-content">
+    //       <p>I am a very simple card. I am good at containing small bits of information.
+    //       I am convenient because I require little markup to use effectively.</p>
+    //     </div>
+    //     <div class="card-action">
+    //       <a href="#">This is a link</a>
+    //     </div>
+    //   </div>
 }
