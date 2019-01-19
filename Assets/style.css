@@ -108,3 +108,11 @@
   .card {
     /* max-width: 100px; */
   }
+  .card-text {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+  .card-content {
+    padding: 5px !important;
+  }

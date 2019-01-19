@@ -31,7 +31,7 @@ function yummlyGet(query) {
     }).done(function (response) {
         let recipe = {
             url: response.attribution.url,
-            picture: response.images[0].hostedSmallUrl,
+            picture: response.images[0].hostedMediumUrl,
             name: response.name,
             prepTime: response.totalTimeInSeconds / 60
         }
@@ -44,14 +44,34 @@ function yummlyGet(query) {
 // recipe info is sent here and displayed
 // recipe is an object to has 4 values: url, picture, name, and prepTime
 function recipeDisplay(recipe) {
-    let item = $("<div>");
+    let card = $("<div>").addClass("card");
+    let imageContainer = $("<div>").addClass("card-image waves-effect waves-block waves-light")
     let url = $("<a>").attr("href", recipe.url).attr("target", "_blank");
     let picture = $("<img>").attr("src", recipe.picture);
-    url.append(picture);
-    let name = $("<p>").text(recipe.name);
-    let prepTime = $("<p>").text("Cooking Time: " + recipe.prepTime + " minutes");
-    item.append(url, name, prepTime);
-    $("#recipes-panel").append(item);
+    imageContainer.append(url.append(picture));
+
+    let cardContent = $("<div>").addClass("card-content");
+    let title = $("<p>").text(recipe.name).addClass("card-text card-title");
+    let prepTime = $("<p>").text("Cooking Time: " + recipe.prepTime + " minutes").addClass("card-text");
+    cardContent.append(title, prepTime);
+
+
+    card.append(imageContainer, cardContent);
+    $("#recipes-panel").append(card);
+
+
+//     <div class="card">
+//     <div class="card-image waves-effect waves-block waves-light">
+//       <img class="activator" src="images/office.jpg">
+//     </div>
+//     <div class="card-content">
+//       <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+//     </div>
+//     <div class="card-reveal">
+//       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+//       <p>Here is some more information about this product that is only revealed once clicked on.</p>
+//     </div>
+//   </div>
 }
 
 // to be moved to app.js
